@@ -71,7 +71,6 @@ export default function GuestList({
 
   useEffect(() => {
     const sorted = guests.sort((a, b) => b.id - a.id);
-    console.log(sorted);
     setSortedGuests(sorted);
   }, [guests]);
 

@@ -1,4 +1,5 @@
 import { AppBar, Button, makeStyles, Typography } from "@material-ui/core";
+import { red } from "@material-ui/core/colors";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PopupWrapper from "../PopupWrapper/PopupWrapper";
@@ -11,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     padding: "1vh 1vw 1vh 1vw",
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: red[600],
   },
   link: {
     textDecoration: "none",
@@ -35,7 +36,7 @@ export default function AdminNav({ handleLogout, currentUser }) {
       <AppBar className={classes.appbar}>
         <Link to="/" className={classes.link}>
           <Button className={classes.link}>
-            <Typography>BGCB Virtual Events Admin Panel</Typography>
+            <Typography>Seacoast Capital</Typography>
           </Button>
         </Link>
         {currentUser.firstname.toLowerCase() === "evyn" ? (

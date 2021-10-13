@@ -20,7 +20,6 @@ export const createGuest = async (guestData) => {
 
 export const showGuests = async () => {
   const response = await api.get("/seacoast_guests");
-  console.log(response);
   return response.data;
 };
 
