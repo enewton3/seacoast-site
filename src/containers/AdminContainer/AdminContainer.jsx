@@ -16,6 +16,7 @@ export default function AdminContainer() {
 
   const fetchGuestList = useCallback(async () => {
     const resp = await showGuests();
+    console.log(resp);
     setGuests(resp);
   }, []);
 

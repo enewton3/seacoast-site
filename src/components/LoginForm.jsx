@@ -71,21 +71,15 @@ export default function LoginForm(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (
-    //   formData.password.toLowerCase() === process.env.REACT_APP_EVENT_PASSWORD
-    // ) {
-    //   try {
-    const response = await createGuest(formData);
-    const guest = JSON.stringify(response);
-    setLoggedIn(guest);
-    setCurrentGuest(guest);
-    history.push("/event");
-    // } catch (error) {
-    //   console.error(error);
-    // }
-    // } else {
-    //   window.alert("Incorrect password, please try again");
-    // }
+    try {
+      const response = await createGuest(formData);
+      const guest = JSON.stringify(response);
+      setLoggedIn(guest);
+      setCurrentGuest(guest);
+      history.push("/event");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
