@@ -3,22 +3,27 @@ import { makeStyles } from "@material-ui/core";
 import { useHistory } from "react-router";
 import VimeoFrame from "../../components/VimeoFrame/VimeoFrame";
 import ChatFrame from "../../components/ChatFrame/ChatFrame";
+import Logo from "../../components/Logo";
 
 const useStyles = makeStyles((theme) => ({
   event: {
     display: "flex",
-    flexFlow: "row wrap",
+    flexFlow: "column wrap",
     alignItems: "center",
     justifyContent: "center",
     // paddingBottom: "10vh",
     height: "100%",
   },
+  container: {
+    display: "flex",
+    flexFlow: "row wrap",
+  },
   vimeoframe: {
-    width: "64vw",
+    width: "60vw",
   },
   chatframe: {
-    width: "30%",
-    height: "70vh",
+    // width: "30%",
+    // height: "70vh",
   },
 }));
 
@@ -32,11 +37,14 @@ export default function Event({ currentGuest }) {
 
   return (
     <div className={classes.event}>
-      <div className={classes.vimeoframe}>
-        <VimeoFrame />
-      </div>
-      <div className={classes.chatframe}>
-        <ChatFrame />
+      <Logo />
+      <div className={classes.container}>
+        <div className={classes.vimeoframe}>
+          <VimeoFrame />
+        </div>
+        <div className={classes.chatframe}>
+          <ChatFrame />
+        </div>
       </div>
       {/* <div className={classes.partyBlurb}>
         <p>

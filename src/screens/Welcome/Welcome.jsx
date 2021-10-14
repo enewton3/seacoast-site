@@ -1,14 +1,12 @@
 import { makeStyles } from "@material-ui/core";
 import React from "react";
 import LoginForm from "../../components/LoginForm";
-// import HeaderGraphic from "../../components/HeaderGraphic";
-// import backgroundimg from "../../assets/eventbackground.jpg";
-// import Logo from "../../components/Logo";
+import Logo from "../../components/Logo";
 
 const useStyles = makeStyles((theme) => ({
   welcome: {
     display: "flex",
-    // flexFlow: "column wrap",
+    flexFlow: "column wrap",
     // backgroundImage: `url(${backgroundimg})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
@@ -30,12 +28,11 @@ export default function Welcome({ currentGuest, setCurrentGuest }) {
 
   return (
     <div className={classes.welcome}>
-      {/* <HeaderGraphic /> */}
+      <Logo />
       <LoginForm
         currentGuest={currentGuest}
         setCurrentGuest={setCurrentGuest}
       />
-      {/* <Logo /> */}
     </div>
   );
 }
