@@ -46,20 +46,6 @@ export default function Event({ currentGuest }) {
           <ChatFrame />
         </div>
       </div>
-      {/* <div className={classes.partyBlurb}>
-        <p>
-          To reserve your seats for House Party 2021, scheduled for October 15,
-          2021:
-        </p>
-        <a
-          href="https://www.bgcb.org/house-party-2021"
-          className={classes.partyLink}
-          rel="noreferrer"
-          target="_blank"
-        >
-          <button className={classes.button}>CLICK HERE</button>
-        </a>
-      </div> */}
     </div>
   );
 }
