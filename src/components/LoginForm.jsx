@@ -14,6 +14,21 @@ const useStyles = makeStyles((theme) => ({
     border: "3px solid white",
     backgroundColor: "rgba(6,34,42, .2)",
     padding: "3vh 0 1vh 0",
+    "@media(max-width: 1024px)": {
+      width: "50%",
+    },
+    "@media(max-width: 900px)": {
+      width: "60%",
+    },
+    "@media(max-width: 800px)": {
+      width: "70%",
+    },
+    "@media(max-width: 700px)": {
+      width: "80%",
+    },
+    "@media(max-width: 700px)": {
+      width: "90%",
+    },
   },
   input: {
     color: "white",
@@ -47,13 +62,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
-// const CustomInput = withStyles({
-//   root: {
-//     color: "white",
-//   },
-//   input: { color: "white" },
-// })(TextField);
 
 export default function LoginForm(props) {
   const [formData, setFormData] = useState({});
