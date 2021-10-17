@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core";
 import { useHistory } from "react-router";
 import VimeoFrame from "../../components/VimeoFrame/VimeoFrame";
@@ -50,7 +50,7 @@ export default function Event({ currentGuest }) {
   const history = useHistory();
 
   const [width, setWidth] = useState(window.innerWidth);
-  const [chatButton, setChatButton] = useState(false);
+  // const [chatButton, setChatButton] = useState(false);
   const [chatOpen, setChatOpen] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -58,23 +58,23 @@ export default function Event({ currentGuest }) {
     history.push("/");
   }
 
-  let isMobile = width <= 768;
+  // let isMobile = width <= 768;
 
-  const handleWindowSizeChange = () => {
+  const handleWindowSizeChange = useCallback(() => {
     setWidth(window.innerWidth);
     if (width <= 900) {
       setChatOpen(false);
     } else if (width > 900) {
       setChatOpen(true);
     }
-  };
+  }, [width]);
 
   useEffect(() => {
     window.addEventListener("resize", handleWindowSizeChange);
     return () => {
       window.removeEventListener("resize", handleWindowSizeChange);
     };
-  }, []);
+  }, [handleWindowSizeChange]);
 
   return (
     <div className={classes.event}>
