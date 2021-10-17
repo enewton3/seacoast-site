@@ -1,6 +1,7 @@
 import { Button, makeStyles, Paper } from "@material-ui/core";
 import React, { useState } from "react";
 import AdminNav from "../../components/AdminNav/AdminNav";
+import ChatFrame from "../../components/ChatFrame/ChatFrame";
 import GuestCreate from "../../components/GuestCreate/GuestCreate";
 import GuestList from "../../components/GuestList/GuestList";
 import VimeoFrame from "../../components/VimeoFrame/VimeoFrame";
@@ -72,6 +73,7 @@ export default function AdminPanel(props) {
       <div className={classes.panelBody}>
         <Paper className={classes.paper}>
           <VimeoFrame />
+          <ChatFrame />
         </Paper>
         <Paper className={classes.paper}>
           <GuestList
@@ -81,17 +83,17 @@ export default function AdminPanel(props) {
             handleDeleteAll={handleDeleteAll}
             admin={admin}
           />
+          {admin ? (
+            <Button
+              onClick={() => {
+                setCreateOpen(true);
+              }}
+              variant="outlined"
+            >
+              Create A New Guest
+            </Button>
+          ) : null}
         </Paper>
-        {admin ? (
-          <Button
-            onClick={() => {
-              setCreateOpen(true);
-            }}
-            variant="outlined"
-          >
-            Create A New Guest
-          </Button>
-        ) : null}
         <GuestCreate
           onClose={() => {
             setCreateOpen(false);
